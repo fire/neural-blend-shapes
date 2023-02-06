@@ -10,6 +10,6 @@ python demo.py --animated_bvh=1 --obj_output=0 --pose_file=./eval_constant/seque
 cd blender_scripts
 blender -b -P nbs_fbx_output.py -- --input ../demo --output ../demo/output.glb
 # Test with triangulated mesh
-python demo.py --animated_bvh=1 --obj_output=0 --pose_file=./eval_constant/sequences/dance.npy --obj_path=./eval_constant/meshes/fire-fleur.obj --normalize=1
+python demo.py --animated_bvh=0 --obj_output=0 --pose_file=./eval_constant/sequences/house-dance.npy --obj_path=./eval_constant/meshes/fire-fleur.obj --normalize=1
 cd blender_scripts
 blender -b -P nbs_fbx_output.py -- --input ../demo --output ../demo/output.glb
