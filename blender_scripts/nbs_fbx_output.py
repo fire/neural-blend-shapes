@@ -101,7 +101,7 @@ def export_animated_mesh(output_path,armature,mesh,IsAnimation):
     if output_path.endswith('.glb'):
         print('Exporting to glTF binary (.glb)')
         # Currently exporting without shape/pose shapes for smaller file sizes
-        bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_selected=True, export_morph=IsAnimation)
+        bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', use_selection=True, export_morph=IsAnimation, export_all_influences=True)
     elif output_path.endswith('.fbx'):
         print('Exporting to FBX binary (.fbx)')
         bpy.ops.export_scene.fbx(filepath=output_path, use_selection=True, add_leaf_bones=False,bake_anim=IsAnimation)

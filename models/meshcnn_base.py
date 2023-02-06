@@ -53,6 +53,8 @@ class MeshCNNWrapper:
             for i, neighbors in enumerate(self.topo_loader.meshes[i].ve):
                 for e in neighbors:
                     indices.append([i, e])
+                if len(neighbors) == 0:
+                    continue
                 val.extend([1 / len(neighbors)] * len(neighbors))
             val = torch.FloatTensor(val)
             indices = torch.LongTensor(indices).t()

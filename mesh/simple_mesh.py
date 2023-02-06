@@ -100,7 +100,7 @@ class SimpleMesh:
                                    for ind in face_vertex_ids]
                     self.faces.append(face_vertex_ids)
         self.vs = np.asarray(self.vs)
-        self.faces = np.asarray(self.faces, dtype=np.int)
+        self.faces = np.asarray(self.faces, dtype=np.int32)
         assert np.logical_and(self.faces >= 0, self.faces < len(self.vs)).all()
         if need_prepare:
             self.prepare_mesh()

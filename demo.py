@@ -101,6 +101,7 @@ def prepare_obj(filename, topo_loader):
     mesh = StaticMeshes([filename], topo_loader)
     return mesh
 
+import shutil
 
 def write_back(prefix, skeleton, skinning_weight, verts, faces, original_path, rot, basis, coff):
     os.makedirs(prefix, exist_ok=True)
@@ -117,10 +118,10 @@ def write_back(prefix, skeleton, skinning_weight, verts, faces, original_path, r
         np.save(pjoin(prefix, 'coff.npy'), coff.squeeze())
     bvh_writer.write(pjoin(prefix, 'skeleton.bvh'), skeleton, rot)
 
-    os.system(f"cp {original_path} {pjoin(prefix, 'T-pose.obj')}")
+    shutil.copy(original_path, pjoin(prefix, 'T-pose.obj'))
 
     if os.path.exists(pjoin(prefix, 'obj')):
-        os.system(f"rm -r {pjoin(prefix, 'obj/*')}")
+        shutil.rmtree(pjoin(prefix, 'obj'))
     if verts is not None:
         print('Writing back...')
         for i in tqdm(range(verts.shape[0])):
