@@ -11,6 +11,7 @@ cd blender_scripts
 blender -b -P nbs_fbx_output.py -- --input ../demo --output ../demo/output.glb
 # Test with triangulated mesh and advanced aligned without forced normalization from python
 # Clothing must be removed.
-python demo.py --animated_bvh=1 --obj_output=0 --pose_file=./eval_constant/sequences/house-dance.npy --obj_path=./eval_constant/meshes/fire-fleur.obj
+python demo.py --animated_bvh=0 --obj_output=0 --pose_file=./eval_constant/sequences/house-dance.npy --obj_path=./eval_constant/meshes/fire-fleur.obj
 cd blender_scripts
 blender -b -P nbs_fbx_output.py -- --input ../demo --output ../demo/output.glb
+# Abandoned because I can't get the new character to match.
