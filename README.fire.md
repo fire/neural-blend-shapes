@@ -1,3 +1,6 @@
+# README.fire
+
+```bash
 # Clone the repository using Git
 git clone https://github.com/PeizhuoLi/neural-blend-shapes.git
 
@@ -31,4 +34,6 @@ python ../demo.py --animated_bvh=0 --obj_output=0 --pose_file=../eval_constant/s
 # Again, run the Blender script in background mode with new input and output
 blender -b -P nbs_fbx_output.py -- --input ../demo --output ../demo/output.glb
 
-# The final comment seems to indicate a conclusion without direct action, thus no command needed.
+# Custom
+python ../demo.py --animated_bvh=0 --obj_output=0 --pose_file=../eval_constant/sequences/house-dance.npy --obj_path=../eval_constant/meshes/custom.obj
+```
