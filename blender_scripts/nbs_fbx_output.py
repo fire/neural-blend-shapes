@@ -78,7 +78,7 @@ def init_scene():
     bpy.ops.object.delete(use_global=False)
     
 def import_obj(filepath):
-    bpy.ops.import_scene.obj(filepath=filepath,split_mode="OFF")
+    bpy.ops.wm.obj_import(filepath=filepath)
     bpy.ops.object.shade_smooth()
     # For some mysterious raison, this is necessary otherwise I cannot toggle shade smooth / shade flat
 
